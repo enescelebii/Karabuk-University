@@ -30,7 +30,7 @@ void square1(){
 				if(i==square/2&&b==square/2){
 					printf("  ");
 					//printf("X ");
-					continue;//ortada X veya bosluk yazdırmak istedim oylesine.yani istedigimz sekli ortaya cıkarabiliriz aslında
+					continue;//I want to put a gap in the middle at random.actually we can creat every shape in the middle
 				}
 				printf("%c",a);
 				printf(" ");

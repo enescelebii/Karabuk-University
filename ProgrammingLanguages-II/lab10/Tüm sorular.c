@@ -8,7 +8,7 @@ typedef struct node{
 void add_node(node **head_ptr,int num){
 	node * new_node=malloc(sizeof(node));
 	new_node->number=num;
-	new_node->next=NULL;
+	new_node->next=NULl;
 	if(*head_ptr==NULL){
 		*head_ptr = new_node;
 		return;

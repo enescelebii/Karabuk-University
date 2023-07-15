@@ -18,7 +18,7 @@ int tekmi(int dizi[],int size){
 		return 0;
 	}
 	if(dizi[size]%2==1){
-		return x+1 + tekmi(dizi,size-1);
+		return x++ + tekmi(dizi,size-1);
 	}
 	return tekmi(dizi,size-1);
 }

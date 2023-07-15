@@ -20,7 +20,7 @@ int main(){
 	if((dosya = fopen("patients.dat","w"))==NULL)
 		printf("dosya olusturulamadi");
 	else{
-		for(int i=0;i<5;i++){
+		for(int i=0;i<100;i++){
 			fwrite(&basePatient,sizeof(hasta),1,dosya);
 		}
 	}
@@ -77,11 +77,11 @@ void creatPatient(FILE *dosya){
 	else{
         patientinfo.no = hesapID;
         printf("hasta isim?:");
-        scanf("%s", patientinfo.name);
+        scanf(" %[^\n]", patientinfo.name);
         printf("hasta yas?:");
         scanf("%d", &patientinfo.age);
         printf("hastanin sikayeti?:");
-        scanf("%s", patientinfo.sikayet);
+        scanf(" %[^\n]", patientinfo.sikayet);
         fseek(dosya, (hesapID - 1) * sizeof(hasta), SEEK_SET);
         fwrite(&patientinfo, sizeof(hasta), 1, dosya);
     }
@@ -100,7 +100,11 @@ void findPatient(FILE *dosya){
 	printf("Bulmak istediginiz hastanin numarasini giriniz:");scanf("%d",&hesapID);
 	fseek(dosya,(hesapID-1)*sizeof(hasta),SEEK_SET);
 	fread(&patientinfo,sizeof(hasta),1,dosya);
-	printf("%-16s%-16s%-16s%-16s\n","hasta No","hasta Adi","hasta Yasi","hasta sikayeti");
+	if(patientinfo.no== 0){
+		printf("\n***BOYLE BIR HASTA YOKTUR***\n\n");
+		return;
+	}
+	printf("%-16s%-16s%-16s%-16s\n","hasta No:","hasta Adi:","hasta Yasi:","hasta sikayeti:");
 	printf("%-16d%-16s%-16d%-16s\n",patientinfo.no, patientinfo.name, patientinfo.age, patientinfo.sikayet);
 	fclose(dosya);
 }
@@ -116,11 +120,11 @@ void deletePatient(FILE *dosya){
 	printf("Silmek istediginiz hastanin numarasini giriniz:");scanf("%d",&hesapID);
 	fseek(dosya,(hesapID-1)*sizeof(hasta),SEEK_SET);
 	fread(&patientinfo,sizeof(hasta),1,dosya);
-	printf("%-16s%-16s%-16s%-16s\n","hasta No","hasta Adi","hasta Yasi","hasta sikayeti");
+	printf("%-16s%-16s%-16s%-16s\n","hasta No:","hasta Adi:","hasta Yasi:","hasta sikayeti:");
 	printf("%-16d%-16s%-16d%-16s\n",patientinfo.no, patientinfo.name, patientinfo.age, patientinfo.sikayet);
 	fseek(dosya,(hesapID-1)*sizeof(hasta),SEEK_SET);
 	fwrite(&basePatient,sizeof(hasta),1,dosya);
-	printf("*** hasta silinmistir ***\n");
+	printf("\n*** hasta silinmistir ***\n\n");
 	fclose(dosya);
 }
 void rewritePatient(FILE *dosya){
@@ -136,14 +140,14 @@ void rewritePatient(FILE *dosya){
 	fseek(dosya,(hesapID-1)*sizeof(hasta),SEEK_SET);
 	fread(&patientinfo,sizeof(hasta),1,dosya);
 	printf("hasta isim?:");
-    scanf("%s", patientinfo.name);
+    scanf(" %[^\n]", patientinfo.name);
     printf("hasta yas?:");
     scanf("%d", &patientinfo.age);
     printf("hastanin sikayeti?:");
-    scanf("%s", patientinfo.sikayet);
+    scanf(" %[^\n]", patientinfo.sikayet);
 	fseek(dosya,(hesapID-1)*sizeof(hasta),SEEK_SET);
 	fwrite(&patientinfo,sizeof(hasta),1,dosya);
-	printf("*** hasta Guncellenmistir ***\n");
+	printf("\n*** hasta Guncellenmistir ***\n\n");
 	fclose(dosya);
 }
 void listPatient(FILE *dosya) {
@@ -161,7 +165,7 @@ void listPatient(FILE *dosya) {
         return;
     }
 
-    fprintf(hastalar, "%-16s%-16s%-16s%-16s\n", "hasta no", "hasta adi", "hasta yasi", "hasta sikayeti");
+    fprintf(hastalar, "%-16s%-16s%-16s%-16s\n", "hasta no:", "hasta adi:", "hasta yasi:", "hasta sikayeti:");
 
     while (fread(&patientinfo, sizeof(hasta), 1, dosya)) {
         if (patientinfo.no != 0) {

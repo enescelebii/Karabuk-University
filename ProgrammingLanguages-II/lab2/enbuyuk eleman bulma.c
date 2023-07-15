@@ -20,9 +20,9 @@ int enbuyuk(int dizi[]){
 	if(x<10){
 		if(dizi[x]>max){
 			max=dizi[x];
-			x++;
-			enbuyuk(dizi);
 		}
-		return max;
+		x++;
+		enbuyuk(dizi);
 	}
+	return max;
 }

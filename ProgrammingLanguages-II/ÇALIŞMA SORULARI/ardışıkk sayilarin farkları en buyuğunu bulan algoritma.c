@@ -4,7 +4,7 @@ int main(){
 	int n,temp,*dizi;
 	printf("Dizideki ardisik sayilarin mutlak degerce en buyuk degeri bulan algoritma\nbir dizi boyutu giriniz:");
 	scanf("%d",&n);
-	dizi = (int*)calloc(dizi,n*sizeof(int));
+	dizi = (int*)calloc(n,sizeof(int));
 	for(int i=0;i<n;i++){
 		printf("%d. eleman: ",i+1);
 		scanf("%d",dizi+i);
@@ -16,5 +16,6 @@ int main(){
 		}
 	}
 	printf("En buyuk fark: %d",temp);
+	free(dizi);
 	return 0;
 }
