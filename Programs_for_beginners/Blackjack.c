@@ -137,7 +137,7 @@ int main() {
             	if(boomstatus!=1)
                 printf("\n***KAZANDIN!***\n");
                 else{
-                	printf("\n***KAYBETTİN!***\n");
+                	printf("\n***KAYBETTIN!***\n");
 				}
             }
             break;
