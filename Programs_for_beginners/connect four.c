@@ -16,11 +16,10 @@ int main(){
 	
 	
 	int player_first_x = 0;
-	int player_first_y = 0;
 	int player_second_x = 0;
-	int player_second_y = 0;
 	
 	while( tur < 42 ){
+		
 		system("cls");
 		print_table();
 		check_win();
@@ -29,16 +28,17 @@ int main(){
 		printf("\nBirini oyuncunun sirasi:\n\nHamleni hangi hucreye yerlestireceksin?\n");
 		printf("x:");
 		scanf("%d",&player_first_x);
-		printf("y:");
-		scanf("%d",&player_first_y);
-		if(table[player_first_x][player_first_y] == 0){
-			table[player_first_x][player_first_y] = 1;
-		}else{
-			system("cls");
-			print_table();
-			printf("\nHata: Bu hucre dolu! Tekrar deneyin.\n");
+		int i = ROWS - 1;
+		
+		while (i >= 0 && table[i][player_first_x] != 0) {
+            i--; // Boş hücre bulana kadar yukarı çıkıyo
+        }
+		if (i >= 0) {
+            table[i][player_first_x] = 1;
+        } else {
+            printf("Geçersiz hamle! Lütfen başka bir sütun seçin.\n");
             goto tekrardene1;
-		}
+        }	
 		system("cls");
 		print_table();
 		check_win(table);
@@ -47,16 +47,18 @@ int main(){
 		printf("\nikinci oyuncunun sirasi:\n\nHamleni hangi hucreye yerlestireceksin?\n");
 		printf("x:");
 		scanf("%d",&player_second_x);
-		printf("y:");
-		scanf("%d",&player_second_y);
-		if(table[player_second_x][player_second_y] == 0){
-			table[player_second_x][player_second_y] = 2;
-		}else{
-			system("cls");
-			print_table();
-			printf("\nHata: Bu hucre dolu! Tekrar deneyin.\n");
+		i = ROWS - 1; // En alt satır
+        while (i >= 0 && table[i][player_second_x] != 0) {
+            i--; // Boş hücre bulana kadar yukarı çık
+        }
+
+        if (i >= 0) { // Geçerli hamle
+            table[i][player_second_x] = 2;
+        } else {
+        	system("cls");
+            printf("Gecersiz hamle! Lutfen baska bir sutun secin.\n");
             goto tekrardene2;
-		}
+        }
 		system("cls");
 		print_table();
 		check_win(table);
