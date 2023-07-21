@@ -102,13 +102,13 @@ void check_win(){
 				system("cls");
 				printf("\n\n***Birinci oyuncu kazandi***\n\n");
 				print_table();
-				exit(0);
+				return;
 			}
 			else if(success2==4){
 				system("cls");
 				printf("\n\n***ikinci oyuncu kazandi***\n\n");
 				print_table();
-				exit(0);
+				return;
 			}
 		}
 	}
