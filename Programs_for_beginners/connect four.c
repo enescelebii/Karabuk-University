@@ -121,6 +121,7 @@ void check_win(){
 			if(table[i][a]==1){
 				success1++;
 			}else{
+				success1=0;
 				if(table[i][a]==2){
 					success2++;
 				}
