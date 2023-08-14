@@ -8,16 +8,11 @@ int main(){
 	printf("kelime sayisi %d",kelimeSay(one)+1);
 }
 int kelimeSay(char one[]){
-	int count;
+	int miktar;
 	int c;
 	for(c=0;one[c]!=NULL;c++);
 	for(;c>0;c--){
-		if(one[c]==' '&&(one[c+1]>=97&&one[c+1]<=122)) count++;
-		if(one[c]=='.'&&(one[c+1]>=97&&one[c+1]<=122)) count++;
-		if(one[c]==','&&(one[c+1]>=97&&one[c+1]<=122)) count++;
-		if(one[c]=='/'&&(one[c+1]>=97&&one[c+1]<=122)) count++;
-		if(one[c]==':'&&(one[c+1]>=97&&one[c+1]<=122)) count++;
-		if(one[c]==';'&&(one[c+1]>=97&&one[c+1]<=122)) count++;
+		if(one[c]==' '&&(one[c+1]>=97&&one[c+1]<=122)) miktar++;
 	}
-	return count;
+	return miktar;
 }

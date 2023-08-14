@@ -1,14 +1,12 @@
 #include <stdio.h>
+#include <string.h>
 int main() {
     char dizi[50];
     char temp;
     char *ch = dizi; 
     int u = 0;
     gets(dizi);
-    while(*ch != '\0') { 
-        u++;
-        ch++;
-    }
+    u  = strlen(dizi);
     ch = dizi; 
     for(int i = 0; i < u/2; i++){
         temp = *(ch + i);

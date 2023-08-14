@@ -1,7 +1,7 @@
 #include<stdio.h>
 char char_bubblesort(char[],int,int,int);
 int main(){							// KENDİM YAPTIM ENES ÇELEBİ
-	char cumle[100];				//GUNLERCE UGRASTIM COK EMEK VERDİM KAFA PATLATTIM UMARIM CALISIRRRR
+	char cumle[100];				//GUNLERCE UGRASTIM COK EMEK VERDİM KAFA PATLATTIM UMARIM CALISIRRRR calıstı aq
 	int adet=0;
 	printf("Bu program cumleyi rekursif fonksiyonlar ile alfabetik siralar\nlutfen bir cumle giriniz\n\ncumle:");
 	gets(cumle);

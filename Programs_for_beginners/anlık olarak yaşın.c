@@ -21,7 +21,7 @@ int main(){
 	scanf("%d",&(born->gun));
 	time_t current;
 	struct tm *yzg;
-	time (&current);
+	//time (&current);
 	yzg = localtime(&current);
 	if (yzg->tm_mon + 1 < born->ay) {
 		mon = (yzg->tm_mon + 12 + 1) - born->ay;
