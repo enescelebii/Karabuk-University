@@ -1,0 +1,23 @@
+
+public class Teacher {
+	int i;
+	Teacher(int i){
+		int id;
+		switch(i) {
+		case 1:
+			id = 1;
+			Branch ders = Branch.ENG;
+			break;
+		case 2:
+			id = 2;
+			Branch ders2 = Branch.CS;
+		case 3:
+			id = 3;
+			Branch ders3 = Branch.MATH;
+			break;
+		case 4:
+			id = 4;
+			Branch ders4 = Branch.PHYSICS;
+		}
+	}
+}
