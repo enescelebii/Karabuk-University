@@ -18,6 +18,7 @@ int main(){
 	return 0;
 }
 int dothatshit(int num){
+	sleep(0.5);
 	printf("\n-%d",num);
 	if(num==1){
 		printf("\nNUM sayisi 1 olmustur Collatz Conjecture tamamlanmistir: 1");

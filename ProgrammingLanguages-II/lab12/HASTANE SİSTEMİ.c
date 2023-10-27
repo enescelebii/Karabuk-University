@@ -63,6 +63,7 @@ void creatPatient(FILE *dosya){
     int hesapID;
     dosya = fopen("patients.dat", "r+");
     if (dosya == NULL) {
+    	system("cls");
         printf("Dosya acilamadi\n");
         return;
     }
