@@ -1,9 +1,0 @@
-INDEX VERSION 1.134+C:\Users\ENES\Desktop\Karabuk-University\_ JAVA _\.metadata\.plugins\org.eclipse.jdt.core
-3753218713.index
-3368310632.index
-2347663335.index
-4121210650.index
-2887311998.index
-2885872533.index
-1865797976.index
-3389104625.index

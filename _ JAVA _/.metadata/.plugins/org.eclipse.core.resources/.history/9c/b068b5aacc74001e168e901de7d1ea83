@@ -1,8 +1,0 @@
-package outerClass_and_innerClass;
-
-public class OuterClass {
-	int x = 10;
-	class InnerClass {
-		int y = 5;
-		}
-}
