@@ -90,7 +90,7 @@ void deleteStudent(){
 	}
 }
 void findBestScore(){
-	double temp,puan=0;
+	double puan=0;
 	node *p;
 	p=head;
 	bestScore= head;
