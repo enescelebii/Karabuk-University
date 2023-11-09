@@ -1,13 +1,5 @@
 
 public class StatMaker {
-	
-	
-	
-	
-	
-	
-	
-	
 	static void processMoves(Gamer g1,Gamer g2) {
 		if(g1.sign == null || g2.sign == null || Arena.isGameOver == true) return;
 		else if(g1.sign == g2.sign)
