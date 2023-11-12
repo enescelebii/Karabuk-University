@@ -5,20 +5,19 @@ enum Rank{
 	ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING;
 }
 public class deck {
-    private card[] cards;
+    private card[] cards = new card[52];
 
     public deck() {
         initializeDeck();
     }
 
     private void initializeDeck() {
-    	Suit[] suits = Suit.values();
-    	Rank[] ranks = Rank.values();
-        cards = new card[52];
+//    	Suit[] suits = Suit.values();
+//    	Rank[] ranks = Rank.values();
         int a = 0;
 
-       for(Suit suit : suits) {
-    	   for (Rank rank: ranks) {
+       for(Suit suit : Suit.values()) {
+    	   for (Rank rank: Rank.values()) {
                cards[a] = new card(suit, rank);
                a++;
            }
