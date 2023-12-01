@@ -17,10 +17,10 @@ public class Person {
 		this(name,lastname,20);
 	}
 	Person(int id){
-		this("default ","default ",age);
+		setId(10);
 	}
-	Person(int id){
-		this("default ","default ",age);
+	Person(){
+		this(null,null,1);
 	}
 	
 	public String toString() {
