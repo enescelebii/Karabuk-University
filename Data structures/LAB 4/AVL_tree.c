@@ -101,9 +101,7 @@ int main(){
 			break;
 		tree = insert_to_avl(x,tree);
 	}
-	printf("height: %d",tree->height);
+	printf("height: %d",tree->height+1);
 	inorder(tree);
-	
-	
 	return 0;
 }
