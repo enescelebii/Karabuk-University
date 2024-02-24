@@ -1,10 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<time.h>
-#include<string.h>
-#include<math.h>
-#include<unistd.h>
-#include<ctype.h>
 struct node{
 	int data;
 	struct node *left;
@@ -17,24 +12,28 @@ void inorder(btree root);
 btree insert(btree root,int x);
 btree newnode(int x);
 btree deleteNode(btree,int);
-
-
+int height(btree root);
+int depthNodes(btree root,int depth);
 
 int main(){
 	btree root = NULL;
-	root = insert(root,25);
-	root = insert(root,12);
-	root = insert(root,8);
-	root = insert(root,32);
-	root = insert(root,6);
-	root = insert(root,88);
+	int i = 0,temp;
+	do {
+		printf("\n\nAgaca veri eklemek icin sayi giriniz...\nSayi = ");
+		scanf("%d", &i);
+		if(i != -1)
+		root = insert(root, i);
+		temp = i;
+	} while(i != -1);
+	
+
 	traverse(root);
 	printf("\nKucukten buyuye inorder:\n");
 	inorder(root);
 	
-	root = deleteNode(root,88);
+	printf("\n\n delete last item\n\nheight is %d\n\n",height(root));
+	root = deleteNode(root,i);
 	
-	printf("\n\n delete 88\n\n   height is %d\n\n",height(root));
 	traverse(root);
 	
 	
@@ -125,7 +124,7 @@ void traverse(btree root){
 
 int size(btree root){
 	if(root==NULL)
-		return;
+		return 0;
 	return size(root->left) + size(root->right) + 1;
 }
 

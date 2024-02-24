@@ -27,7 +27,7 @@ public class main {
 
 		list2.add("Gerede");
 
-		ListIterator iter = list2.listIterator(); // Obtaining ListIterator
+		ListIterator<String> iter = list2.listIterator(); // Obtaining ListIterator
 
 		System.out.println("Forward iteration:");
 		while(iter.hasNext()) {

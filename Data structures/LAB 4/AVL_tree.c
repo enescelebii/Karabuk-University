@@ -1,10 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
-#include<string.h>
-#include<math.h>
-#include<unistd.h>
-#include<ctype.h>
 struct node{
 	int data;
 	int height;
@@ -83,25 +77,34 @@ avltree *insert_to_avl(int x, avltree *tree){
 			return right_rotate(tree);
 		if((height(tree->left) - height(tree->right)) > 1 && x > tree->left->data)
 			return left_right_rotate(tree);
-		if((height(tree->left) - height(tree->right)) < -1 && x > tree->left->data)
+		if((height(tree->left) - height(tree->right)) < -1 && x > tree->right->data)
 			return left_rotate(tree);
-		if((height(tree->left) - height(tree->right)) < -1 && x < tree->left->data)
+		if((height(tree->left) - height(tree->right)) < -1 && x < tree->right->data)
 			return right_left_rotate(tree);
 	}
 	else
 		tree = newnode(x);
 return tree;
 }
+void free_tree(avltree *root) {
+    if (root != NULL) {
+        free_tree(root->left);
+        free_tree(root->right);
+        free(root);
+    }
+}
+
 int main(){
 	int x;
-	avltree *tree;
+	avltree *tree = NULL;
 	while(1){
 		scanf("%d",&x);
 		if(x == -1 )
 			break;
 		tree = insert_to_avl(x,tree);
 	}
-	printf("height: %d",tree->height+1);
+	printf("height: %d",tree->height);
 	inorder(tree);
+	free_tree(tree);
 	return 0;
 }

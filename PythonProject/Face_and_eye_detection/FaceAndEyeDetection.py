@@ -22,7 +22,7 @@ while True:
             cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0,0,0),2)
         for (sx, sy, sw, sh) in smiles:
             cv2.rectangle(roi_color, (sx, sy), (sx + sw, sy + sh), (200,150,47),2)
-            cv2.putText(frame, 'Happy', (x-150, y - 10), font, 0.9, (0, 0, 255), 2, cv2.LINE_AA)
+            cv2.putText(frame, 'happy', (x-150, y - 10), font, 0.9, (0, 0, 255), 2, cv2.LINE_AA)
 
     #frame = cv2.flip(frame,1)
     cv2.imshow('Frame', frame)
